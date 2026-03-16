@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pitch Deck: Transformação Digital Casa & Conforto</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+
+    body {
+      font-family: "Plus Jakarta Sans", sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    .slide:not(.active) {
+      display: none !important;
+    }
+
+    .slide.active {
+      animation: slideIn 0.4s ease-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        filter: blur(10px);
+      }
+
+      to {
+        opacity: 1;
+        filter: blur(0);
+      }
+    }
+
+    .db-card {
+      background: #0f172a;
+      border: 1px solid #1e293b;
+    }
+  </style>
+</head>
+
+<body class="bg-black text-slate-900 overflow-hidden">
+  <section class="h-screen w-screen bg-white" id="presentation-container">
+    <div class="w-full h-full relative cursor-default group" ondblclick="toggleFullScreen()">
+      <div id="deck" class="h-full w-full">
+        <div
+          class="slide active h-full flex flex-col items-center justify-center p-20 text-center bg-slate-900 text-white">
+          <h4 class="text-indigo-400 font-mono tracking-widest text-2xl mb-6">
+            ESTRATÉGIA DE ESCALABILIDADE
+          </h4>
+          <h1 class="text-8xl font-extrabold mb-8 leading-tight">
+            Transformação Digital:<br />Casa & Conforto
+          </h1>
+          <div class="w-32 h-2 bg-indigo-500 mb-10"></div>
+          <p class="text-slate-400 text-3xl font-light">
+            Do Caos das Planilhas à Eficiência Data-Driven
+          </p>
+        </div>
+
+        <div class="slide h-full grid md:grid-cols-2 p-24 gap-16 bg-white items-center">
+          <div>
+            <h2 class="text-6xl font-bold mb-10">
+              O Cenário: A Casa & Conforto
+            </h2>
+            <p class="text-slate-600 mb-10 text-xl leading-relaxed">
+              Rede regional com 10 lojas físicas operando de forma isolada e buscando expansão para vendas online.
+              Atualmente, os principais desafios são:
+            </p>
+            <div class="space-y-6">
+              <div class="flex items-center gap-6 p-6 bg-red-50 rounded-2xl border border-red-100">
+                <i data-lucide="package-x" class="text-red-600 shrink-0 w-8 h-8"></i>
+                <span class="text-lg"><b>Estoque:</b> Venda de produtos esgotados devido ao controle em planilhas
+                  isoladas que não se comunicam.</span>
+              </div>
+              <div class="flex items-center gap-6 p-6 bg-red-50 rounded-2xl border border-red-100">
+                <i data-lucide="user-minus" class="text-red-600 shrink-0 w-8 h-8"></i>
+                <span class="text-lg"><b>Clientes:</b> Sem histórico ou rastro de preferências, dificultando a
+                  fidelização de clientes recorrentes.</span>
+              </div>
+              <div class="flex items-center gap-6 p-6 bg-red-50 rounded-2xl border border-red-100">
+                <i data-lucide="clock" class="text-red-600 shrink-0 w-8 h-8"></i>
+                <span class="text-lg"><b>Decisão Estratégica:</b> Delay de 15 dias após o fechamento do mês para o dono
+                  verificar lucro ou prejuízo.</span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-slate-50 rounded-[3rem] p-16 flex flex-col justify-center border border-slate-200 relative overflow-hidden h-full">
+            <div class="absolute top-0 right-0 p-8 opacity-5"><i data-lucide="alert-triangle"
+                class="w-48 h-48 text-red-900"></i></div>
+            <p class="text-slate-500 font-bold text-lg uppercase mb-6 tracking-widest z-10">
+              O Obstáculo da Expansão
+            </p>
+            <h3 class="text-5xl font-bold text-slate-900 mb-8 z-10 leading-snug">
+              Como <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-emerald-500 font-extrabold pb-2 border-b-4 border-indigo-400">integrar</span> as lojas físicas com um novo e-commerce sem gerar ruptura operacional?
+            </h3>
+            <p class="text-xl text-slate-500 z-10 leading-relaxed font-light">
+              A estrutura atual não suporta a operação online, exigindo uma transformação com foco na unificação de
+              sistemas.
+            </p>
+          </div>
+        </div>
+
+        <div class="slide h-full flex flex-col px-24 py-16 bg-slate-50 overflow-hidden justify-center">
+          <h2 class="text-5xl font-bold mb-12 text-center">
+            A Arquitetura da Solução ("O que comprar e usar?")
+          </h2>
+          <div class="grid grid-cols-2 gap-10 items-stretch max-w-7xl mx-auto w-full">
+            <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-200 relative overflow-hidden group">
+              <div class="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10"><i data-lucide="database"
+                  class="w-24 h-24 text-indigo-900"></i></div>
+              <h3 class="font-bold text-indigo-600 text-3xl mb-4">ERP <span
+                  class="text-sm uppercase text-slate-400 ms-3">O "Coração"</span></h3>
+              <p class="text-xl text-slate-600 leading-relaxed font-light">
+                Substitui planilhas, integrando Vendas, Estoque e Financeiro. A venda na Loja 1 some instantaneamente do
+                estoque das demais lojas e do e-commerce.
+              </p>
+            </div>
+            <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-200 relative overflow-hidden group">
+              <div class="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10"><i data-lucide="pie-chart"
+                  class="w-24 h-24 text-indigo-900"></i></div>
+              <h3 class="font-bold text-indigo-600 text-3xl mb-4">BI <span
+                  class="text-sm uppercase text-slate-400 ms-3">O "Cérebro"</span></h3>
+              <p class="text-xl text-slate-600 leading-relaxed font-light">
+                Coleta dados brutos e os converte em gráficos visuais. O dono acompanha um painel atualizado por hora de
+                lucratividade real e inteligência para novas lojas.
+              </p>
+            </div>
+            <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-200 relative overflow-hidden group">
+              <div class="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10"><i data-lucide="code"
+                  class="w-24 h-24 text-indigo-900"></i></div>
+              <h3 class="font-bold text-indigo-600 text-3xl mb-4">ORM <span
+                  class="text-sm uppercase text-slate-400 ms-3">A "Fundação"</span></h3>
+              <p class="text-xl text-slate-600 leading-relaxed font-light">
+                Tradução segura entre a aplicação e o banco. Garante agilidade de código, proteção contra falhas de
+                integridade e permite abstração sobre a base de dados.
+              </p>
+            </div>
+            <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-200 relative overflow-hidden group">
+              <div class="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10"><i data-lucide="users"
+                  class="w-24 h-24 text-indigo-900"></i></div>
+              <h3 class="font-bold text-indigo-600 text-3xl mb-4">CRM <span
+                  class="text-sm uppercase text-slate-400 ms-3">A "Memória"</span></h3>
+              <p class="text-xl text-slate-600 leading-relaxed font-light">
+                Armazenará histórico do cliente. Auxilia o vendedor a recomendar poltronas combinando com o sofá
+                comprado há meses, fidelizando ativamente o cliente.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="slide h-full grid md:grid-cols-2 p-24 items-center gap-16 bg-white">
+          <div>
+            <h2 class="text-6xl font-bold mb-12">Empoderando Decisões</h2>
+            <div class="space-y-10">
+              <div class="flex gap-6 items-start">
+                <div
+                  class="bg-indigo-100 text-indigo-600 w-20 h-20 rounded-2xl flex items-center justify-center shrink-0 border border-indigo-200">
+                  <i data-lucide="shopping-bag" class="w-10 h-10"></i>
+                </div>
+                <div>
+                  <p class="font-bold text-2xl text-slate-800">Operacional <span
+                      class="text-lg font-normal text-slate-500">(Vendedor)</span></p>
+                  <p class="text-xl text-slate-600 mt-2 font-light">
+                    Consulta estoque real no tablet antes da venda, evitando cancelamentos constrangedores.
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-6 items-start">
+                <div
+                  class="bg-indigo-100 text-indigo-600 w-20 h-20 rounded-2xl flex items-center justify-center shrink-0 border border-indigo-200">
+                  <i data-lucide="package" class="w-10 h-10"></i>
+                </div>
+                <div>
+                  <p class="font-bold text-2xl text-slate-800">Gerencial <span
+                      class="text-lg font-normal text-slate-500">(Estoque)</span></p>
+                  <p class="text-xl text-slate-600 mt-2 font-light">
+                    Torna-se estrategista via Giro de Estoque, localizando móveis parados e cobrindo falta urgente.
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-6 items-start">
+                <div
+                  class="bg-indigo-100 text-indigo-600 w-20 h-20 rounded-2xl flex items-center justify-center shrink-0 border border-indigo-200">
+                  <i data-lucide="trending-up" class="w-10 h-10"></i>
+                </div>
+                <div>
+                  <p class="font-bold text-2xl text-slate-800">Estratégico <span
+                      class="text-lg font-normal text-slate-500">(Dono)</span></p>
+                  <p class="text-xl text-slate-600 mt-2 font-light">
+                    Via inteligência geográfica e vendas do BI, usa dados precisos para determinar o local da 11ª loja.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-[#0f172a] rounded-[3rem] p-16 text-white h-full border border-slate-800 flex flex-col justify-center relative overflow-hidden">
+            <div class="absolute -bottom-10 -right-10 opacity-10"><i data-lucide="smartphone"
+                class="w-96 h-96 text-indigo-400"></i></div>
+            <h4 class="font-bold mb-6 uppercase text-lg text-indigo-400 tracking-widest z-10 flex items-center gap-3">
+              <i data-lucide="sparkles" class="w-6 h-6"></i> Inovação e Diferencial
+            </h4>
+            <h3 class="text-5xl font-bold mb-6 z-10 leading-tight">Realidade Aumentada<br>(RA)</h3>
+            <p class="text-xl text-slate-300 font-light leading-relaxed mb-8 z-10">
+              Para o novo e-commerce, o cliente usará a câmera do celular no aplicativo para visualizar o móvel em
+              tamanho real diretamente na própria sala.
+            </p>
+            <div class="bg-indigo-500/10 border border-indigo-500/30 p-8 rounded-2xl z-10 backdrop-blur-sm">
+              <p class="text-xl text-indigo-100 font-light">
+                <b class="text-indigo-400 text-xl block mb-2 font-bold">O Impacto:</b> Resolve a dúvida "Será que cabe?",
+                reduzindo frete reverso e alavancando a conversão online.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="slide h-full flex flex-col p-24 items-center justify-center bg-slate-900 text-white relative overflow-hidden">
+          <div class="absolute -top-32 -left-32 w-[600px] h-[600px] bg-indigo-600/20 rounded-full blur-[100px]"></div>
+          <div class="absolute bottom-0 right-0 w-[800px] h-[800px] bg-emerald-600/10 rounded-full blur-[100px]"></div>
+
+          <h4 class="text-emerald-400 font-mono tracking-widest text-xl mb-4 z-10 uppercase">
+            O Business Case
+          </h4>
+          <h2 class="text-7xl font-bold mb-16 text-center text-white z-10">
+            Resumo da Viabilidade (Projeção)
+          </h2>
+          <div class="grid grid-cols-2 gap-10 w-full max-w-7xl z-10">
+
+            <!-- Card 1: Quanto -->
+            <div class="bg-slate-800/80 p-10 rounded-[2rem] border border-slate-700/50 backdrop-blur-md flex flex-col">
+              <div class="flex items-center gap-4 mb-6">
+                <div class="p-4 bg-emerald-500/20 rounded-2xl text-emerald-400"><i data-lucide="dollar-sign"
+                    class="w-8 h-8"></i></div>
+                <h3 class="text-3xl font-bold text-white">Quanto? <span
+                    class="text-emerald-400 text-lg font-normal ml-3">(Valores Simbólicos)</span></h3>
+              </div>
+              <div class="space-y-6 flex-1 mt-2">
+                <div>
+                  <p class="text-slate-400 text-sm uppercase font-bold tracking-widest mb-2">Risco / Investimento Total
+                  </p>
+                  <p class="text-3xl font-mono text-white">R$ 180.000 <span class="text-lg text-slate-500 block sm:inline mt-1 sm:mt-0">(Setup +
+                      Licenças Ano 1)</span></p>
+                </div>
+                <div>
+                  <p class="text-slate-400 text-sm uppercase font-bold tracking-widest mb-2">Projeção de Retorno (Nova
+                    Receita)</p>
+                  <p class="text-3xl font-mono text-emerald-400">+ R$ 1.2 Milhão <span
+                      class="text-lg text-emerald-600/70 block sm:inline mt-1 sm:mt-0">/ anuais recuperados</span></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: Tempo -->
+            <div class="bg-slate-800/80 p-10 rounded-[2rem] border border-slate-700/50 backdrop-blur-md flex flex-col">
+              <div class="flex items-center gap-4 mb-6">
+                <div class="p-4 bg-indigo-500/20 rounded-2xl text-indigo-400"><i data-lucide="clock" class="w-8 h-8"></i>
+                </div>
+                <h3 class="text-3xl font-bold text-white">Em Quanto Tempo?</h3>
+              </div>
+              <div class="space-y-6 flex-1 mt-2">
+                <div>
+                  <p class="text-slate-400 text-sm uppercase font-bold tracking-widest mb-2">Go-Live (Cronograma)</p>
+                  <p class="text-3xl font-mono text-white">6 Meses <span class="text-lg text-slate-500 block sm:inline mt-1 sm:mt-0">(Para as 10
+                      Lojas)</span></p>
+                </div>
+                <div>
+                  <p class="text-slate-400 text-sm uppercase font-bold tracking-widest mb-2">Payback (Retorno do
+                    Investimento)</p>
+                  <p class="text-3xl font-mono text-indigo-400">Em 8 Meses <span class="text-lg text-indigo-500/70 block sm:inline mt-1 sm:mt-0">após
+                      o Go-Live</span></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3: Como -->
+            <div class="bg-slate-800/80 p-10 rounded-[2rem] border border-slate-700/50 backdrop-blur-md flex flex-col">
+              <div class="flex items-center gap-4 mb-8">
+                <div class="p-4 bg-blue-500/20 rounded-2xl text-blue-400"><i data-lucide="cpu" class="w-8 h-8"></i></div>
+                <h3 class="text-3xl font-bold text-white">Como?</h3>
+              </div>
+              <ul class="space-y-5 flex-1">
+                <li class="flex items-start gap-4 text-xl text-slate-300 font-light">
+                  <i data-lucide="check-circle-2" class="w-6 h-6 text-blue-400 shrink-0 mt-1"></i>
+                  <span>Implantação do <b>ERP Cloud</b> gerando fonte única de dados.</span>
+                </li>
+                <li class="flex items-start gap-4 text-xl text-slate-300 font-light">
+                  <i data-lucide="check-circle-2" class="w-6 h-6 text-blue-400 shrink-0 mt-1"></i>
+                  <span>Conexão dos registros a um <b>CRM + BI</b> preditivos.</span>
+                </li>
+                <li class="flex items-start gap-4 text-xl text-slate-300 font-light">
+                  <i data-lucide="check-circle-2" class="w-6 h-6 text-blue-400 shrink-0 mt-1"></i>
+                  <span>App inovador de <b>Realidade Aumentada (RA)</b>.</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Card 4: Impacto -->
+            <div class="bg-slate-800/80 p-10 rounded-[2rem] border border-slate-700/50 backdrop-blur-md flex flex-col">
+              <div class="flex items-center gap-4 mb-8">
+                <div class="p-4 bg-rose-500/20 rounded-2xl text-rose-400"><i data-lucide="shield-check"
+                    class="w-8 h-8"></i></div>
+                <h3 class="text-3xl font-bold text-white">Mitigação de Riscos</h3>
+              </div>
+              <div class="grid grid-cols-2 gap-8 flex-1 items-center">
+                <div>
+                  <p class="text-5xl font-bold text-white font-mono mb-3">100%</p>
+                  <p class="text-lg text-slate-400 leading-tight">Acuracidade de estoque <br><span class="text-sm">(Fim das rupturas)</span></p>
+                </div>
+                <div>
+                  <p class="text-5xl font-bold text-white font-mono mb-3">-60%</p>
+                  <p class="text-lg text-slate-400 leading-tight">Taxa de Frete Reverso <br><span class="text-sm">(Certeza gerada pela
+                    RA)</span></p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Botão Ver Resultados -->
+          <div class="absolute bottom-6 right-10 z-[100]">
+            <a href="dashboard.html" class="inline-flex items-center gap-4 px-10 py-5 bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-bold rounded-2xl transition-all shadow-xl shadow-emerald-500/20 hover:scale-105 text-xl">
+              Ver Resultados Reais <i data-lucide="arrow-right" class="w-6 h-6"></i>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="absolute bottom-6 left-0 right-0 flex justify-center items-center gap-8">
+        <button onclick="changeSlide(-1)" class="p-3 bg-slate-100 rounded-full hover:bg-slate-200">
+          <i data-lucide="chevron-left"></i>
+        </button>
+        <div id="dots" class="flex gap-2"></div>
+        <button onclick="changeSlide(1)" class="p-3 bg-slate-100 rounded-full hover:bg-slate-200">
+          <i data-lucide="chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section id="dashboard" class="min-h-screen bg-slate-950 py-24 px-6 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex justify-between items-end mb-12">
+        <div>
+          <h2 class="text-white text-3xl font-bold">
+            Painel BI: Performance Omnichannel
+          </h2>
+          <p class="text-slate-500 font-mono text-xs mt-2 uppercase">
+            Simulação Baseada na Estratégia Implementada
+          </p>
+        </div>
+        <div
+          class="bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 px-4 py-2 rounded-xl text-xs font-bold">
+          DADOS EM TEMPO REAL
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+        <div class="db-card p-6 rounded-2xl">
+          <p class="text-slate-500 text-[10px] font-bold uppercase mb-4 tracking-widest">
+            Faturamento Diário
+          </p>
+          <h3 class="text-3xl font-bold text-white mb-2 font-mono">
+            R$ 85.200
+          </h3>
+          <p class="text-emerald-500 text-xs">+15.4% vs meta</p>
+        </div>
+        <div class="db-card p-6 rounded-2xl">
+          <p class="text-slate-500 text-[10px] font-bold uppercase mb-4 tracking-widest">
+            Ticket Médio (RA)
+          </p>
+          <h3 class="text-3xl font-bold text-white mb-2 font-mono">
+            R$ 5.120
+          </h3>
+          <p class="text-indigo-400 text-xs">+30% via Realidade Aumentada</p>
+        </div>
+        <div class="db-card p-6 rounded-2xl">
+          <p class="text-slate-500 text-[10px] font-bold uppercase mb-4 tracking-widest">
+            Eficiência Logística
+          </p>
+          <h3 class="text-3xl font-bold text-white mb-2 font-mono">98.4%</h3>
+          <p class="text-emerald-500 text-xs">Acuracidade total</p>
+        </div>
+        <div class="db-card p-6 rounded-2xl">
+          <p class="text-slate-500 text-[10px] font-bold uppercase mb-4 tracking-widest">
+            Churn de Clientes
+          </p>
+          <h3 class="text-3xl font-bold text-white mb-2 font-mono">2.1%</h3>
+          <p class="text-emerald-500 text-xs">-5% após CRM</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="db-card p-8 rounded-2xl">
+          <h4 class="text-slate-400 text-xs font-bold uppercase mb-8">
+            Recuperação de Receita Mensal
+          </h4>
+          <canvas id="revenueChart" height="150"></canvas>
+        </div>
+        <div class="db-card p-8 rounded-2xl overflow-hidden">
+          <h4 class="text-slate-400 text-xs font-bold uppercase mb-8">
+            Status de Integração das Lojas
+          </h4>
+          <div class="space-y-4">
+            <div class="flex justify-between items-center bg-white/5 p-4 rounded-xl">
+              <span class="text-white text-sm">Estoque Integrado (API ERP)</span>
+              <span class="text-emerald-500 text-xs font-bold">100% ATIVO</span>
+            </div>
+            <div class="flex justify-between items-center bg-white/5 p-4 rounded-xl">
+              <span class="text-white text-sm">Mapeamento CRM</span>
+              <span class="text-indigo-400 text-xs font-bold">85% PROCESSADO</span>
+            </div>
+            <div class="flex justify-between items-center bg-white/5 p-4 rounded-xl">
+              <span class="text-white text-sm">Conversão Realidade Aumentada</span>
+              <span class="text-indigo-400 text-xs font-bold">+22% ALTA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-white py-12 text-center text-slate-400 text-[10px] font-bold uppercase tracking-widest">
+    © 2026 Casa & Conforto - Business Transformation Pitch
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    // Carousel Logic
+    let current = 0;
+    const slides = document.querySelectorAll(".slide");
+    const dots = document.getElementById("dots");
+
+    slides.forEach((_, i) => {
+      const dot = document.createElement("div");
+      dot.className = `w-2 h-2 rounded-full transition-all cursor-pointer ${i === 0 ? "bg-indigo-600 w-8" : "bg-slate-300"}`;
+      dot.onclick = () => goToSlide(i);
+      dots.appendChild(dot);
+    });
+
+    function changeSlide(n) {
+      slides[current].classList.remove("active");
+      current = (current + n + slides.length) % slides.length;
+      slides[current].classList.add("active");
+      updateDots();
+    }
+
+    function goToSlide(i) {
+      slides[current].classList.remove("active");
+      current = i;
+      slides[current].classList.add("active");
+      updateDots();
+    }
+
+    function updateDots() {
+      document.querySelectorAll("#dots div").forEach((dot, i) => {
+        dot.className = `w-2 h-2 rounded-full transition-all cursor-pointer ${i === current ? "bg-indigo-600 w-8" : "bg-slate-300"}`;
+      });
+    }
+
+    // BI Chart
+    const ctx = document.getElementById("revenueChart").getContext("2d");
+    new Chart(ctx, {
+      type: "bar",
+      data: {
+        labels: ["Mês 1", "Mês 2", "Mês 3", "Mês 4", "Mês 5", "Mês 6"],
+        datasets: [
+          {
+            label: "Recuperação de Lucro (Em Milhares R$)",
+            data: [150, 280, 450, 680, 920, 1200],
+            backgroundColor: "#4F46E5",
+            borderRadius: 8,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: {
+          y: {
+            grid: { color: "rgba(255,255,255,0.05)" },
+            ticks: { color: "#64748b" },
+          },
+          x: { grid: { display: false }, ticks: { color: "#64748b" } },
+        },
+      },
+    });
+
+    // Fullscreen API Logic
+    function toggleFullScreen() {
+      const doc = window.document;
+      const docEl = doc.documentElement;
+
+      const requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+      const cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+      if (!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+        requestFullScreen.call(docEl);
+      } else {
+        cancelFullScreen.call(doc);
+      }
+    }
+
+    // Enter fullscreen automatically hint using keyboard (requires user gesture usually)
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'f' || e.key === 'F') {
+        toggleFullScreen();
+      }
+    });
+
+  </script>
+</body>
+
+</html>
